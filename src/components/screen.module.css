@@ -1,0 +1,10 @@
+.screen {
+  width: calc(100vw - 60px);
+  height: calc(100vw - 60px);
+}
+
+.screen canvas {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}

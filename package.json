@@ -4,10 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "copy:wasm": "cp ./game/build/*.wasm ./public/carts/",
+    "dev:web": "vite",
+    "dev:wasm": "cd game && w4 watch",
+    "dev:ios": "npx cap run ios",
+    "build:wasm": "cd game && make && cp ./build/*.wasm ../public/carts/",
     "build:web": "tsc && vite build",
-    "build:ios": "rm -r ios && npx cap add ios"
+    "build:ios": "rm -rf ios && npx cap add ios",
+    "build:all": "npm run build:wasm && npm run build:web && npm run build:ios"
   },
   "dependencies": {
     "@capacitor/cli": "^4.6.3",
